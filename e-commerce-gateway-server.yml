@@ -27,6 +27,6 @@ zuul:
     serviceId: e-commerce-auth-server
     stripPrefix: false
    order:
-     path: /api/orders/**
+     path: /orders/**
      serviceId: e-commerce-order-service
-     stripPrefix: false
+     stripPrefix: true
