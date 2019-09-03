@@ -1,6 +1,10 @@
 management:
  security:
   enabled: false
+  
+ribbon:
+  eureka:
+   enabled: false  
 
 server:
   port: 9092
