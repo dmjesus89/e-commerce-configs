@@ -6,7 +6,7 @@ eureka:
     hostname: localhost
     nonSecurePort: ${server.port}
   client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      default-zone: http://[myIP@]:8787/eureka/
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://[myIP@]:8787/eureka/
