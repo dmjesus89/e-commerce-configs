@@ -15,6 +15,9 @@ eureka:
 
 zuul:
   routes:
+    oauth-service:
+      path: /oauth/**
+      serviceId: oauth-service
     orders-service:
       path: /api/orders/**
       serviceId: orders-service
