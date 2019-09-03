@@ -24,3 +24,52 @@ zuul:
 spring:
   application:
     name: gateway
+    
+
+
+
+# Server config
+server:
+  port: 9093
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+
+info:
+  component: API Gateway
+
+# Spring config
+spring:
+  application:
+    name: api-gateway
+
+# Eureka config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    registerWithEureka: false
+
+# Ribbon config
+ribbon:
+  eureka:
+    enabled: true
+
+# Zuul config
+zuul:
+ #prefix: /api
+  routes:
+    articles:
+      path: /oauth/**
+      serviceId: oauth-service
+    authors:
+      path: /api/orders/**
+      serviceId: order-service
+
+endpoints:
+  routes:
+    sensitive: false
+  trace:
+    sensitive: false
