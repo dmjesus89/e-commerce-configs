@@ -1,42 +1,14 @@
-# Server config
 server:
-  port: 9093
+  port: 9092
 
-logging:
-  level:
-    ROOT: INFO
-    org.springframework.web: DEBUG
-
-info:
-  component: API Gateway
-
-# Eureka config
 eureka:
-  client:
-   registerWithEureka: true
-   fetchRegistry: false
-   serviceUrl:
-    defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/ #${DISCOVERY_URL:http://localhost:8761}/eureka/
-  server:
-   wait-time-in-ms-when-sync-empty: 3000
   instance:
-    prefer-ip-address: true
-
-
-# Ribbon config 
-ribbon:
-  eureka:
-    enabled: true
-
-# Zuul config
-zuul:
- #prefix: /api
-  routes:
-   oauth:
-    path: /oauth/**
-    serviceId: oauth-service
-   order:
-     path: /api/orders/**
-     serviceId: order-service
-  trace:
-   sensitive: false
+    hostname: localhost
+    port: 9091
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
