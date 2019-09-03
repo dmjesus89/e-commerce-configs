@@ -20,11 +20,13 @@ logging:
     
 # Zuul config
 zuul:
- #prefix: /api
+  prefix: /api
   routes:
    oauth:
     path: /oauth/**
     serviceId: e-commerce-auth-server
+    stripPrefix: false
    order:
      path: /api/orders/**
      serviceId: e-commerce-order-service
+     stripPrefix: false
