@@ -1,33 +1,3 @@
-server:
- port: 9093
-    
-eureka:
- instance:
-  hostname: localhost
-  port: 9091
- client:
-  registerWithEureka: true
-  fetchRegistry: false
-  serviceUrl:
-    defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
- server:
-  wait-time-in-ms-when-sync-empty: 3000
-
-zuul:
-  routes:
-    oauth-service:
-      path: /oauth/**
-      serviceId: oauth-service
-    orders-service:
-      path: /api/orders/**
-      serviceId: orders-service
-spring:
-  application:
-    name: gateway
-    
-
-
-
 # Server config
 server:
   port: 9093
@@ -51,3 +21,24 @@ eureka:
     serviceUrl:
       defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
     registerWithEureka: false
+
+# Ribbon config
+ribbon:
+  eureka:
+    enabled: true
+
+# Zuul config
+zuul:
+ #prefix: /api
+  routes:
+    articles:
+      path: /oauth/**
+      serviceId: oauth-service
+    authors:
+      path: /api/orders/**
+      serviceId: order-service
+ endpoints:
+  routes:
+   sensitive: false
+  trace:
+   sensitive: false
