@@ -24,7 +24,7 @@ zuul:
   routes:
    oauth:
     path: /oauth/**
-    serviceId: oauth-service
+    serviceId: e-commerce-auth-server
    order:
      path: /api/orders/**
-     serviceId: order-service
+     serviceId: e-commerce-order-service
