@@ -24,9 +24,6 @@ logging:
     
 # Zuul config
 zuul:
-  endpoints:
-   routes:
-    sensitive: false
   prefix: /api
   routes:
    oauth:
