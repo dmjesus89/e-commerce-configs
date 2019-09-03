@@ -38,3 +38,7 @@ zuul:
    authors:
      path: /api/orders/**
      serviceId: order-service
+  endpoints:
+ 
+  trace:
+   sensitive: false
