@@ -10,19 +10,17 @@ logging:
 info:
   component: API Gateway
 
-# Spring config
-spring:
-  application:
-    name: api-gateway
-
 # Eureka config
 eureka:
   client:
-    serviceUrl:
-      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
-    registerWithEureka: false
+   registerWithEureka: true
+   fetchRegistry: false
+   serviceUrl:
+    defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/ #${DISCOVERY_URL:http://localhost:8761}/eureka/
+  server:
+   wait-time-in-ms-when-sync-empty: 3000
 
-# Ribbon config http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+# Ribbon config 
 ribbon:
   eureka:
     enabled: true
