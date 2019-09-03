@@ -5,6 +5,10 @@ management:
 ribbon:
   eureka:
    enabled: false  
+   
+meeting:
+  ribbon:
+    listOfServers: localhost:9091   
 
 server:
   port: 9092
