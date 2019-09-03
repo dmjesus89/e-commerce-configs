@@ -22,20 +22,19 @@ eureka:
       defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
     registerWithEureka: false
 
-
+# Ribbon config http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+ribbon:
+  eureka:
+    enabled: true
 
 # Zuul config
 zuul:
  #prefix: /api
   routes:
-    articles:
-      path: /oauth/**
-      serviceId: oauth-service
-    authors:
-      path: /api/orders/**
-      serviceId: order-service
- endpoints:
-  routes:
    sensitive: false
-  trace:
-   sensitive: false
+   articles:
+    path: /oauth/**
+    serviceId: oauth-service
+   authors:
+     path: /api/orders/**
+     serviceId: order-service
