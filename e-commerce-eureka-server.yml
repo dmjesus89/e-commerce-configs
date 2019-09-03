@@ -1,14 +1,12 @@
 server:
-  port: 9091
+  port: 8761
 
 eureka:
   instance:
     hostname: localhost
+    nonSecurePort: ${server.port}
   client:
-    registerWithEureka: true
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://[myIP@]:9091/eureka
-      ##defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    wait-time-in-ms-when-sync-empty: 3000
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      default-zone: http://[myIP@]:8787/eureka/
