@@ -19,6 +19,9 @@ eureka:
     defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/ #${DISCOVERY_URL:http://localhost:8761}/eureka/
   server:
    wait-time-in-ms-when-sync-empty: 3000
+  instance:
+    prefer-ip-address: true
+
 
 # Ribbon config 
 ribbon:
