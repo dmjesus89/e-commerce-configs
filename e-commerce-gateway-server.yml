@@ -67,9 +67,8 @@ zuul:
     authors:
       path: /api/orders/**
       serviceId: order-service
-
-endpoints:
+ endpoints:
   routes:
-    sensitive: false
+   sensitive: false
   trace:
-    sensitive: false
+   sensitive: false
