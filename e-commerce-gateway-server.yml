@@ -52,20 +52,3 @@ eureka:
       defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
     registerWithEureka: false
 
-
-
-# Zuul config
-zuul:
- #prefix: /api
-  routes:
-    articles:
-      path: /oauth/**
-      serviceId: oauth-service
-    authors:
-      path: /api/orders/**
-      serviceId: order-service
- endpoints:
-  routes:
-   sensitive: false
-  trace:
-   sensitive: false
