@@ -1,5 +1,5 @@
 server:
- port: 9096
+ port: 9093
     
 eureka:
  instance:
@@ -13,9 +13,11 @@ eureka:
  server:
   wait-time-in-ms-when-sync-empty: 3000
 
-cloud:
-    consul:
-      discovery:
-        prefer-ip-address: true
-      host: "localhost"
-      port: 9000
+zuul:
+  routes:
+    orders-service:
+      path: /api/orders/**
+      serviceId: orders-service
+spring:
+  application:
+    name: gateway
