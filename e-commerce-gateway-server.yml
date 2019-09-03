@@ -3,6 +3,7 @@ management:
   enabled: false
   
 ribbon:
+  readTimeout: 10000
   eureka:
    enabled: false  
    
