@@ -2,49 +2,52 @@ spring:
  cloud:
   config:
    uri: http://localhost:9090
+
+server:
+  port: 9092
    
 management:
  security:
   enabled: false
   
-ribbon:
-  readTimeout: 10000
-  eureka:
-   enabled: false  
-   
-meeting:
-  ribbon:
-    listOfServers: localhost:9091   
-
-server:
-  port: 9092
-
 eureka:
-  instance:
-    hostname: localhost
-    port: 9091
   client:
-    registerWithEureka: true
-    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
-  server:
-    wait-time-in-ms-when-sync-empty: 3000
+      defaultZone: http://localhost:9091
+  
+#ribbon:
+#  readTimeout: 10000
+#  eureka:
+#   enabled: false  
+   
+#meeting:
+#  ribbon:
+#    listOfServers: localhost:9091   
 
-logging:
-  level:
-    ROOT: INFO
-    org.springframework.web: DEBUG
+
+
+#eureka:
+#  instance:
+#    hostname: localhost
+#    port: 9091
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+#  server:
+#    wait-time-in-ms-when-sync-empty: 3000
+
     
 # Zuul config
-zuul:
-  prefix: /api
-  routes:
-   oauth:
-    path: /oauth/**
-    serviceId: e-commerce-auth-server
-    stripPrefix: false
-   order:
-     path: /orders/**
-     serviceId: e-commerce-order-service
-     stripPrefix: true
+#zuul:
+#  prefix: /api
+#  routes:
+#   oauth:
+#    path: /oauth/**
+#    serviceId: e-commerce-auth-server
+#    stripPrefix: false
+#   order:
+#     path: /orders/**
+#     serviceId: e-commerce-order-service
+#     stripPrefix: true
