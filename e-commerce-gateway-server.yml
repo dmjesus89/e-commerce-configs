@@ -30,14 +30,14 @@ eureka:
 
     
 # Zuul config
-#zuul:
-#  prefix: /api
-#  routes:
-#   oauth:
-#    path: /oauth/**
-#    serviceId: e-commerce-auth-server
-#    stripPrefix: false
-#   order:
-#     path: /orders/**
-#     serviceId: e-commerce-order-service
-#     stripPrefix: true
+zuul:
+  prefix: /api
+  routes:
+   oauth:
+    path: /oauth/**
+    serviceId: e-commerce-auth-server
+    stripPrefix: false
+   order:
+     path: /orders/**
+     serviceId: orders
+     stripPrefix: true
