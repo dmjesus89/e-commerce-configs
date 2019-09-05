@@ -1,8 +1,6 @@
 server:
   port: 9093
   
-  
-
 eureka:
   instance:
     hostname: localhost
@@ -26,9 +24,6 @@ security:
             scope: read,write
 
 spring:
- cloud:
-  config:
-   uri: http://localhost:9090
   profiles:
    active: dev
   datasource:
