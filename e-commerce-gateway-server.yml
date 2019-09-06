@@ -37,6 +37,6 @@ zuul:
     stripPrefix: false
     url: http://localhost:9093/oauth
    order:
-     path: /oauth/**
+     path: /oauth2/**
      stripPrefix: true
      url: http://localhost:9093/oauth
