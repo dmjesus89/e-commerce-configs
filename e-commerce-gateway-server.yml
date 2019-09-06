@@ -32,8 +32,10 @@ eureka:
 zuul:
   routes:
     product:
-      path: /services/product/**
-      url:  http://localhost:9093/oauth/token?grant_type=password&username=admin&password=123456
+      path: /product/**
+      sensitiveHeaders: Cookie,Set-Cookie
+      url:  http://localhost:9093/
+      stripPrefix: false
     customer:
       path: /services/customer/**
       url: http://localhost:9093/users/
