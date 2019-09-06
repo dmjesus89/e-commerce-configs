@@ -29,3 +29,5 @@ eureka:
     wait-time-in-ms-when-sync-empty: 3000
 
 # Zuul config
+zuul:
+ sensitiveHeaders: Cookie,Set-Cookie
