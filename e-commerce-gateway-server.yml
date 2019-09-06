@@ -29,17 +29,3 @@ eureka:
 #    wait-time-in-ms-when-sync-empty: 3000
 
     
-# Zuul config
-zuul:
-  prefix: /api
-  routes:
-   oauth:
-    path: /oauth/**
-    serviceId: e-commerce-auth-server
-    stripPrefix: false
-    url: http://localhost:9093/oauth
-   order:
-     path: /orders/**
-     serviceId: e-commerce-gateway-server
-     stripPrefix: true
-     url: http://localhost:9094/orders
