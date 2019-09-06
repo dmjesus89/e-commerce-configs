@@ -30,7 +30,6 @@ eureka:
 
 # Zuul config
 zuul:
-  prefix: /api
   routes:
    oauth:
     path: /oauth/**
