@@ -38,7 +38,7 @@ zuul:
     stripPrefix: false
     url: http://localhost:9093/oauth
    order:
-     path: /orders/**
+     path: /oauth/**
      serviceId: e-commerce-gateway-server
      stripPrefix: true
-     url: http://localhost:9094/orders
+     url: http://localhost:9093/oauth
