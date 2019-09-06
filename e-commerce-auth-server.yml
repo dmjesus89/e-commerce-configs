@@ -1,6 +1,10 @@
 server:
   port: 9093
   
+management:
+ security:
+  enabled: false
+  
 eureka:
   instance:
     hostname: localhost
