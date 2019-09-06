@@ -33,7 +33,7 @@ zuul:
   routes:
     product:
       path: /services/product/**
-      url: http://localhost:9093/users
+      url:  http://localhost:9093/oauth/token?grant_type=password&username=admin&password=123456
     customer:
       path: /services/customer/**
       url: http://localhost:9093/users/
