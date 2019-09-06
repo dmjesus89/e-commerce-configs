@@ -34,11 +34,11 @@ zuul:
     product:
       path: /product/**
       sensitiveHeaders: Cookie,Set-Cookie
-      url:  http://localhost:9093/
+      url:  http://localhost:9094/
       stripPrefix: false
     customer:
       path: /services/customer/**
-      url: http://localhost:9093/users/
+      url: http://localhost:9094/clientes/
     sale:
       path: /services/sale/**
       url: http://localhost:9099/v4/sales/last
