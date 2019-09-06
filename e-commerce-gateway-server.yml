@@ -22,20 +22,21 @@ eureka:
     port: 9091
   client:
     registerWithEureka: true
-    fetchRegistry: true
+    fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
-#  server:
-#    wait-time-in-ms-when-sync-empty: 3000
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
 
 # Zuul config
 zuul:
   routes:
-   oauth:
-    path: /oauth/**
-    stripPrefix: false
-    url: http://localhost:9093/oauth
-   order:
-     path: /oauth2/**
-     stripPrefix: true
-     url: http://localhost:9093/oauth
+    product:
+      path: /services/product/**
+      url: http://localhost:9093/oauth
+    customer:
+      path: /services/customer/**
+      url: http://localhost:9093/oauth/**
+    sale:
+      path: /services/sale/**
+      url: http://localhost:9094/api/orders
